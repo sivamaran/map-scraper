@@ -1,0 +1,72 @@
+{
+    "product_details": {
+        "product_name": "Premium Bus Travel & Group Tour Services",
+        "product_category": "Travel & Tourism/Transportation Services",
+        "usps": [
+            "Luxury bus fleet with premium amenities",
+            "Custom corporate group travel packages",
+            "Exclusive high-end travel experiences",
+            "Professional tour planning and coordination",
+            "Cost-effective group travel solutions",
+            "24/7 customer support during travel"
+        ],
+        "pain_points_solved": [
+            "Complicated group travel logistics",
+            "Expensive individual travel arrangements",
+            "Lack of customized corporate travel options",
+            "Poor coordination for large group events",
+            "Safety concerns in group transportation",
+            "Time-consuming travel planning process"
+        ]
+    },
+    "icp_information": {
+        "target_industry": [
+            "Corporate Companies",
+            "Educational Institutions",
+            "Wedding Planners",
+            "Event Management",
+            "Religious Organizations",
+            "Sports Teams/Clubs",
+            "Family Reunion Organizers",
+            "Travel Influencers"
+        ],
+        "competitor_companies": [
+            "RedBus",
+            "MakeMyTrip",
+            "Yatra",
+            "Local tour operators",
+            "Private bus operators",
+            "Luxury Bus Company",
+            "Premium Tour Operator",
+            "Corporate Travel Agency"
+        ],
+        "company_size": "10-1000+ employees/members",
+        "decision_maker_persona": [
+            "HR Manager",
+            "Event Coordinator",
+            "Travel Manager",
+            "Family Head/Organizer",
+            "Wedding Planner",
+            "School/College Administrator",
+            "Corporate Executive",
+            "Travel Influencer",
+            "Religious Leader/Organizer"
+        ],
+        "region": [
+            "India",
+            "Major Cities",
+            "Tourist Destinations"
+        ],
+        "budget_range": "$5,000-$50,000 annually",
+        "travel_occasions": [
+            "Corporate offsites",
+            "Wedding functions",
+            "Family vacations",
+            "Educational tours",
+            "Religious pilgrimages",
+            "Adventure trips",
+            "Destination weddings",
+            "Sports events"
+        ]
+    }
+}
