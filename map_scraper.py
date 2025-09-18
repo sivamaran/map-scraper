@@ -1,7 +1,39 @@
 # map_scraper.py
 
+import json
+from datetime import datetime
 from playwright.sync_api import sync_playwright, TimeoutError
 
+# ---------------- Schema Conversion ----------------
+def convert_to_unified_format(lead_data: dict, schema_path: str = "schema_template.json") -> dict:
+    """
+    Load schema template from JSON, populate it with lead_data,
+    and return a unified lead dict.
+    """
+    with open(schema_path, "r", encoding="utf-8") as f:
+        unified_data = json.load(f)
+
+    # Fill schema fields from lead_data
+    unified_data["url"] = lead_data.get("source_url", "")
+    unified_data["platform"] = "map"
+    unified_data["source"] = "map-scraper"
+
+    unified_data["profile"]["full_name"] = lead_data.get("company_name", "") or lead_data.get("name", "")
+    unified_data["profile"]["location"] = lead_data.get("address", "")
+
+    unified_data["contact"]["emails"] = lead_data.get("emails", [])
+    unified_data["contact"]["phone_numbers"] = lead_data.get("phones", [])
+    unified_data["contact"]["address"] = lead_data.get("address", "")
+    unified_data["contact"]["websites"] = [lead_data.get("website", "")] if lead_data.get("website") else []
+
+    unified_data["company_name"] = lead_data.get("company_name", "")
+    unified_data["decision_makers"] = lead_data.get("name", "")
+    unified_data["metadata"]["scraped_at"] = datetime.utcnow().isoformat()
+
+    return unified_data
+
+
+# ---------------- Scraper ----------------
 def scrape_google_maps_contacts(search_query: str, num_contacts: int = 10, headless: bool = True):
     """
     Scrapes business contact information from Google Maps using Playwright.
@@ -10,7 +42,6 @@ def scrape_google_maps_contacts(search_query: str, num_contacts: int = 10, headl
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=headless)
         page = browser.new_page()
-
         contacts = []
 
         try:
@@ -26,9 +57,9 @@ def scrape_google_maps_contacts(search_query: str, num_contacts: int = 10, headl
             # Fill search box
             page.locator('input#searchboxinput').fill(search_query)
             page.keyboard.press("Enter")
+            page.wait_for_timeout(5000)  # allow results to load
 
-            # --- Detect mode dynamically ---
-            page.wait_for_timeout(5000)  # give Maps time to load
+            # Detect mode dynamically
             if page.locator('a[href*="/maps/place/"]').count() > 0:
                 mode = "list"
                 print("✅ Detected LIST mode")
@@ -72,7 +103,6 @@ def scrape_google_maps_contacts(search_query: str, num_contacts: int = 10, headl
                             page.go_back()
                             page.wait_for_timeout(3000)
                         except Exception:
-                            # fallback: re-run query
                             page.locator('input#searchboxinput').fill(search_query)
                             page.keyboard.press("Enter")
                             page.wait_for_timeout(5000)
