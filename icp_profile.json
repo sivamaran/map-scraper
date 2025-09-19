@@ -1,72 +1,75 @@
 {
-    "product_details": {
-        "product_name": "Premium Bus Travel & Group Tour Services",
-        "product_category": "Travel & Tourism/Transportation Services",
-        "usps": [
-            "Luxury bus fleet with premium amenities",
-            "Custom corporate group travel packages",
-            "Exclusive high-end travel experiences",
-            "Professional tour planning and coordination",
-            "Cost-effective group travel solutions",
-            "24/7 customer support during travel"
-        ],
-        "pain_points_solved": [
-            "Complicated group travel logistics",
-            "Expensive individual travel arrangements",
-            "Lack of customized corporate travel options",
-            "Poor coordination for large group events",
-            "Safety concerns in group transportation",
-            "Time-consuming travel planning process"
-        ]
-    },
+  "icp_data": {
     "icp_information": {
-        "target_industry": [
-            "Corporate Companies",
-            "Educational Institutions",
-            "Wedding Planners",
-            "Event Management",
-            "Religious Organizations",
-            "Sports Teams/Clubs",
-            "Family Reunion Organizers",
-            "Travel Influencers"
-        ],
-        "competitor_companies": [
-            "RedBus",
-            "MakeMyTrip",
-            "Yatra",
-            "Local tour operators",
-            "Private bus operators",
-            "Luxury Bus Company",
-            "Premium Tour Operator",
-            "Corporate Travel Agency"
-        ],
-        "company_size": "10-1000+ employees/members",
-        "decision_maker_persona": [
-            "HR Manager",
-            "Event Coordinator",
-            "Travel Manager",
-            "Family Head/Organizer",
-            "Wedding Planner",
-            "School/College Administrator",
-            "Corporate Executive",
-            "Travel Influencer",
-            "Religious Leader/Organizer"
-        ],
-        "region": [
-            "India",
-            "Major Cities",
-            "Tourist Destinations"
-        ],
-        "budget_range": "$5,000-$50,000 annually",
-        "travel_occasions": [
-            "Corporate offsites",
-            "Wedding functions",
-            "Family vacations",
-            "Educational tours",
-            "Religious pilgrimages",
-            "Adventure trips",
-            "Destination weddings",
-            "Sports events"
-        ]
+      "budget_range": "₹50 lakh – ₹25 crore",
+      "company_size": "Individual buyers, Families, Investors, Corporates (10–1000+ employees)",
+      "competitor_companies": [
+        "DLF",
+        "Lodha Group",
+        "Godrej Properties",
+        "Oberoi Realty",
+        "Rustomjee",
+        "Hiranandani Group",
+        "Shapoorji Pallonji Real Estate",
+        "Prestige Group",
+        "Kalpataru"
+      ],
+      "decision_maker_persona": [
+        "Home Buyer (First-time)",
+        "NRI Investor",
+        "High Net Worth Individual (HNI)",
+        "Corporate Real Estate Manager",
+        "Property Investor",
+        "Real Estate Broker/Channel Partner",
+        "Family Head/Decision Maker"
+      ],
+      "region": [
+        "Mumbai Metropolitan Region (MMR)",
+        "South Mumbai",
+        "Western Suburbs",
+        "Central Suburbs",
+        "Navi Mumbai",
+        "Thane"
+      ],
+      "target_industry": [
+        "Residential Buyers",
+        "Commercial Office Seekers",
+        "Real Estate Investors",
+        "NRIs",
+        "Brokers & Channel Partners",
+        "HNIs / UHNIs",
+        "Corporate Companies (leasing/purchase)"
+      ],
+      "property_purposes": [
+        "Residential purchase",
+        "Luxury property investment",
+        "Commercial office leasing",
+        "Retail space acquisition",
+        "Second homes/vacation homes",
+        "NRI investment properties"
+      ]
+    },
+    "product_details": {
+      "pain_points_solved": [
+        "Overwhelming number of property options with lack of clarity",
+        "Low trust and transparency in developer promises",
+        "Delays in project completion and possession",
+        "Difficulty verifying legal documents and RERA compliance",
+        "Time wasted on irrelevant site visits",
+        "High property prices without clear ROI insights",
+        "Lack of tailored investment opportunities for NRIs and HNIs"
+      ],
+      "product_category": "Real Estate Lead Generation & Matching",
+      "product_name": "Mumbai Real Estate Smart Lead Platform",
+      "usps": [
+        "Verified listings from trusted Mumbai developers",
+        "AI-driven property matching based on buyer needs",
+        "Exclusive access to luxury and high-demand projects",
+        "Virtual property tours to save time",
+        "End-to-end legal and RERA compliance checks",
+        "Tailored solutions for NRIs and HNIs",
+        "Market insights and ROI calculators for investors"
+      ]
     }
+  }
 }
