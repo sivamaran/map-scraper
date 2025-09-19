@@ -29,3 +29,8 @@ build/
 
 #.env
 .env
+
+#sample output
+# Ignore sample outputs
+sample_output.csv
+sample_output.json
