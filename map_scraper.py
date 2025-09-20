@@ -1,210 +1,94 @@
-import csv
-import json
+# map_scraper.py
+import os
+import google.generativeai as genai
+from dotenv import load_dotenv
+from scraper_engine import scrape_google_maps_contacts
+from utils import save_json, json_to_csv
+
 import os
 from dotenv import load_dotenv
 import google.generativeai as genai
-from playwright.sync_api import sync_playwright, TimeoutError
 
-# ---------------- Load API key from .env ----------------
-load_dotenv()
+load_dotenv()  # load .env
+
 api_key = os.getenv("GEMINI_API_KEY")
 if not api_key:
-    raise ValueError("❌ GEMINI_API_KEY not found in .env file")
+    raise EnvironmentError("❌ GEMINI_API_KEY not found. Please check your .env file.")
+
 genai.configure(api_key=api_key)
+MODEL_NAME = "gemini-2.5-flash"
 
-# ---------------- Gemini Query Generation ----------------
-def generate_queries_with_gemini(icp_data: dict, num_search_queries: int) -> list:
-    model = genai.GenerativeModel("gemini-2.5-flash")
-    icp_json_text = json.dumps(icp_data, indent=2)
 
+def generate_queries_with_gemini(icp_data, num_search_queries=3):
+    """
+    Generate search queries from ICP using Gemini 2.5 Flash.
+    """
     prompt = f"""
-    You are an expert in lead generation using Google Maps.
-
-    You are given an ICP profile in JSON format.
-
-    Task:
-    - Generate {num_search_queries} unique Google Maps search queries.
-    - Each query must combine one value from "target_industry" with one value from "region".
-
-    Rules:
-    - ⚠️ Use ONLY values from the JSON lists (no hallucinations).
-    - Format: "<Industry> <Region>".
-    - Do not use vague words like "businesses" or "shops".
-    - Keep queries short, natural, and useful for lead scraping.
-
-    Output ONLY the queries, one per line.
-
-    ICP JSON:
-    {icp_json_text}
+    Based on this ICP (Ideal Customer Profile): {icp_data},
+    generate {num_search_queries} highly targeted Google Maps search queries.
+    Return them as a plain list, one query per line.
     """
 
+    model = genai.GenerativeModel(MODEL_NAME)
     response = model.generate_content(prompt)
-    if response.candidates and response.candidates[0].content.parts:
-        queries_text = response.candidates[0].content.parts[0].text.strip()
-    else:
-        raise ValueError("❌ Gemini returned no valid queries.")
 
-    # --- Clean Gemini output ---
-    queries = []
-    for line in queries_text.splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        # Remove numbering like "1." or "2)"
-        line = line.lstrip("1234567890. )-").strip()
-        if line.lower().startswith("here are"):
-            continue
-        queries.append(line)
+    if not response or not response.text:
+        print("⚠️ Gemini returned no text output.")
+        return []
 
-    queries = queries[:num_search_queries]
-
-    print("\n✅ Gemini-generated search queries:")
-    for idx, q in enumerate(queries, start=1):
-        print(f"{idx}. {q}")
-
+    queries = [line.strip() for line in response.text.split("\n") if line.strip()]
+    print(f"✅ Gemini generated {len(queries)} queries: {queries}")
     return queries
 
-# ---------------- Scraper ----------------
-def scrape_google_maps_contacts(search_query: str, num_contacts: int, headless: bool = True):
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=headless)
-        page = browser.new_page()
-        contacts = []
 
-        try:
-            print(f"\n🔍 Searching for: {search_query}")
-            page.goto("https://www.google.com/maps", timeout=60000)
+def wrap_into_schema(raw_details):
+    """
+    Wrap scraped raw details into schema format.
+    """
+    address = raw_details.get("address", "")
+    phone = raw_details.get("phone", "")
 
-            try:
-                page.get_by_role("button", name="Accept all").click(timeout=5000)
-            except TimeoutError:
-                pass
-
-            page.locator('input#searchboxinput').fill(search_query)
-            page.keyboard.press("Enter")
-            page.wait_for_timeout(5000)
-
-            if page.locator('a[href*="/maps/place/"]').count() > 0:
-                mode = "list"
-                print("✅ Detected LIST mode")
-            else:
-                mode = "profile"
-                print("ℹ️ Detected PROFILE mode")
-
-            if mode == "list":
-                previous_count = 0
-                stuck_counter = 0
-                while len(contacts) < num_contacts:
-                    results = page.locator('a[href*="/maps/place/"]').all()
-                    print(f"📌 Found {len(results)} results so far...")
-
-                    if len(results) == previous_count:
-                        stuck_counter += 1
-                    else:
-                        stuck_counter = 0
-                    previous_count = len(results)
-
-                    if stuck_counter >= 3:
-                        print("⚠️ No more new results. Stopping scroll loop.")
-                        break
-
-                    if not results:
-                        print("⚠️ No results found, switching to profile mode.")
-                        break
-
-                    for card in results:
-                        if len(contacts) >= num_contacts:
-                            break
-                        try:
-                            card.click()
-                            page.wait_for_selector("h1", timeout=10000)
-                            card_name = page.locator("h1").first.text_content()
-                        except Exception:
-                            continue
-
-                        if not card_name or card_name.strip().lower() == "results":
-                            continue
-                        if any(c['company_name'] == card_name for c in contacts):
-                            continue
-
-                        details = extract_details(page, card_name, search_query)
-                        contacts.append(details)
-
-                        try:
-                            page.go_back()
-                            page.wait_for_timeout(3000)
-                        except Exception:
-                            page.locator('input#searchboxinput').fill(search_query)
-                            page.keyboard.press("Enter")
-                            page.wait_for_timeout(5000)
-
-            if mode == "profile" or not contacts:
-                try:
-                    card_name = page.locator("h1").first.text_content()
-                    if card_name and card_name.strip().lower() != "results":
-                        details = extract_details(page, card_name, search_query)
-                        contacts.append(details)
-                except Exception:
-                    print(f"⚠️ Could not extract profile for query: {search_query}")
-
-        finally:
-            browser.close()
-        return contacts
-
-def extract_details(page, card_name, source_query):
-    details = {
-        "company_name": card_name or "N/A",
-        "address": "N/A",
-        "phone_number": "N/A",
-        "website": "N/A",
-        "email": "N/A",
-        "source_query": source_query
+    return {
+        "url": raw_details.get("url", ""),
+        "platform": "map",
+        "content_type": "business",
+        "source": "map-scraper",
+        "company_name": raw_details.get("company_name", ""),
+        "profile": {
+            "username": "",
+            "full_name": "",
+            "bio": "",
+            "location": address,  # ✅ location from address
+            "job_title": "",
+            "employee_count": "",
+        },
+        "contact": {
+            "emails": raw_details.get("emails", []),
+            "phone_numbers": [phone] if phone else [],
+            "address": address,
+            "websites": [raw_details.get("website")] if raw_details.get("website") else [],
+            "social_media_handles": {}
+        }
     }
-    try: details["company_name"] = page.locator("h1").first.text_content()
-    except: pass
-    try: details["address"] = page.locator('button[aria-label*="Address"]').first.text_content()
-    except: pass
-    try: details["phone_number"] = page.locator('button[aria-label*="Phone"]').first.text_content()
-    except: pass
-    try: details["website"] = page.locator('a[aria-label*="Website"]').first.get_attribute("href")
-    except: pass
-    return details
 
-# ---------------- Specialized Workflows ----------------
-def _map_scraper_dry(icp_data, num_search_queries):
-    """Generate queries only (no scraping)."""
-    return generate_queries_with_gemini(icp_data, num_search_queries)
 
-def _map_scraper_full(icp_data, num_search_queries, count):
-    """Generate queries + run scraper + save CSV."""
+def run_map_scraper(icp_data, num_search_queries=3, count=5, dry_run=False):
+    """
+    Orchestrator:
+    - dry_run=True → only queries
+    - dry_run=False → full scrape (queries + schema JSON leads)
+    """
     queries = generate_queries_with_gemini(icp_data, num_search_queries)
+
+    if dry_run:
+        print("📝 Dry run mode → only queries generated")
+        return queries
+
     all_results = []
     for q in queries:
-        results = scrape_google_maps_contacts(q, num_contacts=count, headless=True)
-        all_results.extend(results)
+        print(f"\n🔎 Searching for: {q}")
+        raw_results = scrape_google_maps_contacts(q, num_contacts=count, headless=True)
+        for r in raw_results:
+            all_results.append(wrap_into_schema(r))
 
-    filename = "map_search_leads.csv"
-    with open(filename, "w", newline="", encoding="utf-8") as file:
-        fieldnames = ["company_name", "address", "phone_number", "website", "email", "source_query"]
-        writer = csv.DictWriter(file, fieldnames=fieldnames)
-        writer.writeheader()
-        if all_results:
-            writer.writerows(all_results)
-            print(f"\n✅ Saved {len(all_results)} leads to {filename}")
-        else:
-            print(f"\n⚠️ No leads scraped. Empty CSV created: {filename}")
     return all_results
-
-# ---------------- Orchestrator ----------------
-def map_scraper(icp_data, num_search_queries, count, dry_run=False):
-    """
-    Orchestrator function:
-    - dry_run=True  → only generate queries
-    - dry_run=False → full scrape + save CSV
-    """
-    if dry_run:
-        queries = _map_scraper_dry(icp_data, num_search_queries)
-        print("\n📝 Dry run mode — queries only, no scraping.")
-        return queries
-    else:
-        return _map_scraper_full(icp_data, num_search_queries, count)

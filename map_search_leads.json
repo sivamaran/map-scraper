@@ -1,110 +1,332 @@
 [
   {
-    "url": "",
+    "url": "https://www.google.com/maps/place/Brigade+Icon/data=!4m7!3m6!1s0x3a52675cbc4251fd:0x39b3ff4830c10548!8m2!3d13.0583824!4d80.2608853!16s%2Fg%2F11kqg665_k!19sChIJ_VFCvFxnUjoRSAXBMEj_szk?authuser=0&hl=en&rclk=1",
     "platform": "map",
-    "content_type": "",
+    "content_type": "business",
     "source": "map-scraper",
+    "company_name": "",
     "profile": {
       "username": "",
-      "full_name": "Results",
+      "full_name": "",
       "bio": "",
-      "location": "F-611 Tower 2, Seawoods Grand Central, Navi Mumbai, Maharashtra 400706",
+      "location": "",
       "job_title": "",
       "employee_count": ""
     },
     "contact": {
       "emails": [],
       "phone_numbers": [],
-      "address": "F-611 Tower 2, Seawoods Grand Central, Navi Mumbai, Maharashtra 400706",
-      "websites": [
-        "https://www.chalo.com/"
-      ],
-      "social_media_handles": {
-        "instagram": "",
-        "twitter": "",
-        "facebook": "",
-        "linkedin": "",
-        "youtube": "",
-        "tiktok": "",
-        "other": []
-      },
-      "bio_links": []
-    },
-    "content": {
-      "caption": "",
-      "upload_date": "",
-      "channel_name": "",
-      "author_name": ""
-    },
-    "metadata": {
-      "scraped_at": "2025-09-18T11:16:32.016806",
-      "data_quality_score": ""
-    },
-    "industry": "",
-    "revenue": "",
-    "lead_category": "",
-    "lead_sub_category": "",
-    "company_name": "Results",
-    "company_type": "",
-    "decision_makers": "",
-    "bdr": "AKG",
-    "product_interests": "",
-    "timeline": "",
-    "interest_level": "",
-    "icp_identifier": ""
+      "address": "",
+      "websites": [],
+      "social_media_handles": {}
+    }
   },
   {
-    "url": "",
+    "url": "https://www.google.com/maps/place/Doshi+Gardens/data=!4m7!3m6!1s0x3a5266c3af68c22d:0xb039199ab02199d6!8m2!3d13.048606!4d80.2074214!16s%2Fg%2F1tcwv4hl!19sChIJLcJor8NmUjoR1pkhsJoZObA?authuser=0&hl=en&rclk=1",
     "platform": "map",
-    "content_type": "",
+    "content_type": "business",
     "source": "map-scraper",
+    "company_name": "",
     "profile": {
       "username": "",
-      "full_name": "Sponsored",
+      "full_name": "",
       "bio": "",
-      "location": "4th Floor, 409 Building:- R4, Somani Gram, Goregaon West, Mumbai, Maharashtra 401104",
+      "location": "",
       "job_title": "",
       "employee_count": ""
     },
     "contact": {
       "emails": [],
       "phone_numbers": [],
-      "address": "4th Floor, 409 Building:- R4, Somani Gram, Goregaon West, Mumbai, Maharashtra 401104",
-      "websites": [
-        "https://673b00ebb78d1.site123.me/"
-      ],
-      "social_media_handles": {
-        "instagram": "",
-        "twitter": "",
-        "facebook": "",
-        "linkedin": "",
-        "youtube": "",
-        "tiktok": "",
-        "other": []
-      },
-      "bio_links": []
+      "address": "",
+      "websites": [],
+      "social_media_handles": {}
+    }
+  },
+  {
+    "url": "https://www.google.com/maps/place/Piramal+Mahalaxmi/data=!4m7!3m6!1s0x3be7ce5e6abc4379:0xadc00b654e8d4f32!8m2!3d18.9825352!4d72.8280301!16s%2Fg%2F11v3q4m6cx!19sChIJeUO8al7O5zsRMk-NTmULwK0?authuser=0&hl=en&rclk=1",
+    "platform": "map",
+    "content_type": "business",
+    "source": "map-scraper",
+    "company_name": "",
+    "profile": {
+      "username": "",
+      "full_name": "",
+      "bio": "",
+      "location": "",
+      "job_title": "",
+      "employee_count": ""
     },
-    "content": {
-      "caption": "",
-      "upload_date": "",
-      "channel_name": "",
-      "author_name": ""
+    "contact": {
+      "emails": [],
+      "phone_numbers": [],
+      "address": "",
+      "websites": [],
+      "social_media_handles": {}
+    }
+  },
+  {
+    "url": "https://www.google.com/maps/place/The+South+Bay/data=!4m7!3m6!1s0x3be7ce0b8c1d9807:0x13257d93a848f17!8m2!3d18.9596372!4d72.8098388!16s%2Fg%2F11b8_g675v!19sChIJB5gdjAvO5zsRF4-EOtlXMgE?authuser=0&hl=en&rclk=1",
+    "platform": "map",
+    "content_type": "business",
+    "source": "map-scraper",
+    "company_name": "",
+    "profile": {
+      "username": "",
+      "full_name": "",
+      "bio": "",
+      "location": "",
+      "job_title": "",
+      "employee_count": ""
     },
-    "metadata": {
-      "scraped_at": "2025-09-18T11:16:32.016806",
-      "data_quality_score": ""
+    "contact": {
+      "emails": [],
+      "phone_numbers": [],
+      "address": "",
+      "websites": [],
+      "social_media_handles": {}
+    }
+  },
+  {
+    "url": "https://www.google.com/maps/place/Venus+Apartments/data=!4m7!3m6!1s0x3be7ce9a44225257:0x537890ad04dd3cf2!8m2!3d19.0002306!4d72.8129321!16s%2Fg%2F11bwn6n6js!19sChIJV1IiRJrO5zsR8jzdBK2QeFM?authuser=0&hl=en&rclk=1",
+    "platform": "map",
+    "content_type": "business",
+    "source": "map-scraper",
+    "company_name": "",
+    "profile": {
+      "username": "",
+      "full_name": "",
+      "bio": "",
+      "location": "",
+      "job_title": "",
+      "employee_count": ""
     },
-    "industry": "",
-    "revenue": "",
-    "lead_category": "",
-    "lead_sub_category": "",
-    "company_name": "Sponsored",
-    "company_type": "",
-    "decision_makers": "",
-    "bdr": "AKG",
-    "product_interests": "",
-    "timeline": "",
-    "interest_level": "",
-    "icp_identifier": ""
+    "contact": {
+      "emails": [],
+      "phone_numbers": [],
+      "address": "",
+      "websites": [],
+      "social_media_handles": {}
+    }
+  },
+  {
+    "url": "https://www.google.com/maps/place/TND+Listings+%7C+The+New+Door+%7C+NRI+Property+Management+Company+in+Mumbai/data=!4m7!3m6!1s0x3be7b7d8f7cd84c9:0x4ab428e70fb68bf1!8m2!3d19.0821851!4d72.8789412!16s%2Fg%2F11m1bcqjg1!19sChIJyYTN99i35zsR8Yu2D-cotEo?authuser=0&hl=en&rclk=1",
+    "platform": "map",
+    "content_type": "business",
+    "source": "map-scraper",
+    "company_name": "",
+    "profile": {
+      "username": "",
+      "full_name": "",
+      "bio": "",
+      "location": "",
+      "job_title": "",
+      "employee_count": ""
+    },
+    "contact": {
+      "emails": [],
+      "phone_numbers": [],
+      "address": "",
+      "websites": [],
+      "social_media_handles": {}
+    }
+  },
+  {
+    "url": "https://www.google.com/maps/place/nriway.in+Property+Management/data=!4m7!3m6!1s0x3be7c90014c60c9f:0xc2c94e802489946d!8m2!3d19.1197968!4d72.8735254!16s%2Fg%2F11vwgv6wrl!19sChIJnwzGFADJ5zsRbZSJJIBOycI?authuser=0&hl=en&rclk=1",
+    "platform": "map",
+    "content_type": "business",
+    "source": "map-scraper",
+    "company_name": "",
+    "profile": {
+      "username": "",
+      "full_name": "",
+      "bio": "",
+      "location": "",
+      "job_title": "",
+      "employee_count": ""
+    },
+    "contact": {
+      "emails": [],
+      "phone_numbers": [],
+      "address": "",
+      "websites": [],
+      "social_media_handles": {}
+    }
+  },
+  {
+    "url": "https://www.google.com/maps/place/Prop+Island+Real+Estates+Investment+Consultants+%7C+NRI+Real+Estate+Investment+Solutions/data=!4m7!3m6!1s0x4b55e1930e9f7117:0xbab6deadb252b3f8!8m2!3d19.0152462!4d73.0317778!16s%2Fg%2F11ksk_x23t!19sChIJF3GfDpPhVUsR-LNSsq3etro?authuser=0&hl=en&rclk=1",
+    "platform": "map",
+    "content_type": "business",
+    "source": "map-scraper",
+    "company_name": "",
+    "profile": {
+      "username": "",
+      "full_name": "",
+      "bio": "",
+      "location": "",
+      "job_title": "",
+      "employee_count": ""
+    },
+    "contact": {
+      "emails": [],
+      "phone_numbers": [],
+      "address": "",
+      "websites": [],
+      "social_media_handles": {}
+    }
+  },
+  {
+    "url": "https://www.google.com/maps/place/RA+Property+Consultant+%E2%80%93+Real+Estate+%7C+NRI+Consultant+%7C+Mumbai/data=!4m7!3m6!1s0x3be7b749a188e925:0xa10f5d3a0b861a61!8m2!3d19.2105514!4d72.871302!16s%2Fg%2F11xl5txjnl!19sChIJJemIoUm35zsRYRqGCzpdD6E?authuser=0&hl=en&rclk=1",
+    "platform": "map",
+    "content_type": "business",
+    "source": "map-scraper",
+    "company_name": "",
+    "profile": {
+      "username": "",
+      "full_name": "",
+      "bio": "",
+      "location": "",
+      "job_title": "",
+      "employee_count": ""
+    },
+    "contact": {
+      "emails": [],
+      "phone_numbers": [],
+      "address": "",
+      "websites": [],
+      "social_media_handles": {}
+    }
+  },
+  {
+    "url": "https://www.google.com/maps/place/MADSUN+Realty+%7C+NRI+Specialist+%7C+Mumbai+Real+Estate/data=!4m7!3m6!1s0x3be7b70e1ecf9aad:0x627d71b04cdea8eb!8m2!3d19.2040444!4d72.8710017!16s%2Fg%2F11qskkm7nb!19sChIJrZrPHg635zsR66jeTLBxfWI?authuser=0&hl=en&rclk=1",
+    "platform": "map",
+    "content_type": "business",
+    "source": "map-scraper",
+    "company_name": "",
+    "profile": {
+      "username": "",
+      "full_name": "",
+      "bio": "",
+      "location": "",
+      "job_title": "",
+      "employee_count": ""
+    },
+    "contact": {
+      "emails": [],
+      "phone_numbers": [],
+      "address": "",
+      "websites": [],
+      "social_media_handles": {}
+    }
+  },
+  {
+    "url": "https://www.google.com/maps/place/Kalpataru+Paramount/data=!4m7!3m6!1s0x3be7b9880353fd01:0x2bb21822ffacbb62!8m2!3d19.2178815!4d72.9841559!16s%2Fg%2F11g0z03b50!19sChIJAf1TA4i55zsRYrus_yIYsis?authuser=0&hl=en&rclk=1",
+    "platform": "map",
+    "content_type": "business",
+    "source": "map-scraper",
+    "company_name": "",
+    "profile": {
+      "username": "",
+      "full_name": "",
+      "bio": "",
+      "location": "",
+      "job_title": "",
+      "employee_count": ""
+    },
+    "contact": {
+      "emails": [],
+      "phone_numbers": [],
+      "address": "",
+      "websites": [],
+      "social_media_handles": {}
+    }
+  },
+  {
+    "url": "https://www.google.com/maps/place/Piramal+Vaikunth/data=!4m7!3m6!1s0x3be7b94dc1000001:0x3972be2feaf7a4cd!8m2!3d19.2235756!4d72.989017!16s%2Fg%2F11kpdfz8b1!19sChIJAQAAwU255zsRzaT36i--cjk?authuser=0&hl=en&rclk=1",
+    "platform": "map",
+    "content_type": "business",
+    "source": "map-scraper",
+    "company_name": "",
+    "profile": {
+      "username": "",
+      "full_name": "",
+      "bio": "",
+      "location": "",
+      "job_title": "",
+      "employee_count": ""
+    },
+    "contact": {
+      "emails": [],
+      "phone_numbers": [],
+      "address": "",
+      "websites": [],
+      "social_media_handles": {}
+    }
+  },
+  {
+    "url": "https://www.google.com/maps/place/Lodha+Amara+Thane/data=!4m7!3m6!1s0x3be7bbbcd4f20c15:0x4c36bff2609ee7cf!8m2!3d19.2331587!4d72.9911006!16s%2Fg%2F11dd_pyhlq!19sChIJFQzy1Ly75zsRz-eeYPK_Nkw?authuser=0&hl=en&rclk=1",
+    "platform": "map",
+    "content_type": "business",
+    "source": "map-scraper",
+    "company_name": "",
+    "profile": {
+      "username": "",
+      "full_name": "",
+      "bio": "",
+      "location": "",
+      "job_title": "",
+      "employee_count": ""
+    },
+    "contact": {
+      "emails": [],
+      "phone_numbers": [],
+      "address": "",
+      "websites": [],
+      "social_media_handles": {}
+    }
+  },
+  {
+    "url": "https://www.google.com/maps/place/Ashar+Sapphire+-+Residential+Projects+in+Thane/data=!4m7!3m6!1s0x3be7b95ade331cd1:0x817d2e9f4bb4cf28!8m2!3d19.2223843!4d72.979053!16s%2Fg%2F11byyhqx85!19sChIJ0Rwz3lq55zsRKM-0S58ufYE?authuser=0&hl=en&rclk=1",
+    "platform": "map",
+    "content_type": "business",
+    "source": "map-scraper",
+    "company_name": "",
+    "profile": {
+      "username": "",
+      "full_name": "",
+      "bio": "",
+      "location": "",
+      "job_title": "",
+      "employee_count": ""
+    },
+    "contact": {
+      "emails": [],
+      "phone_numbers": [],
+      "address": "",
+      "websites": [],
+      "social_media_handles": {}
+    }
+  },
+  {
+    "url": "https://www.google.com/maps/place/Godrej+Ascend,+Kolshet+Road,+Thane/data=!4m7!3m6!1s0x3be7bb0920066cef:0x15b93bfbcb0f792f!8m2!3d19.2286049!4d72.9830601!16s%2Fg%2F11rv9239nc!19sChIJ72wGIAm75zsRL3kPy_s7uRU?authuser=0&hl=en&rclk=1",
+    "platform": "map",
+    "content_type": "business",
+    "source": "map-scraper",
+    "company_name": "",
+    "profile": {
+      "username": "",
+      "full_name": "",
+      "bio": "",
+      "location": "",
+      "job_title": "",
+      "employee_count": ""
+    },
+    "contact": {
+      "emails": [],
+      "phone_numbers": [],
+      "address": "",
+      "websites": [],
+      "social_media_handles": {}
+    }
   }
 ]
