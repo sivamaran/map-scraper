@@ -32,5 +32,9 @@ build/
 
 #sample output
 # Ignore sample outputs
-sample_output.csv
-sample_output.json
+#sample_output.csv
+#sample_output.json
+test2.py
+
+#file
+ignore/
